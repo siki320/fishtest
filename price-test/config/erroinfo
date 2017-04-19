@@ -1,0 +1,27 @@
+#errno 说明
+
+#define ERR_REDIS               -1
+#define ERR_LBS                 -2
+#define ERR_MAP                 -3
+#define ERR_APP_VERSION         -5
+
+#define ERR_NO_CITY_DATA        -100
+#define ERR_NO_ORDER_VALUE      -101
+#define ERR_NO_TRANSFROM_RATE   -102
+#define ERR_NO_DISTRIBUTOR      -103
+
+// 未命中实验
+#define ERR_NO_EXPERIMENT       100
+
+// 多因素实验
+#define ERR_MUL_ABS_RANGE       110
+#define ERR_MUL_REL_RANGE       111
+
+// 目的地实验
+#define ERR_DEST_INVALID_GRID   120
+#define ERR_DEST_INVALID_DIST   121
+
+// 里程实验
+#define ERR_DIST_INVALID_DIST   130
+
+#endif // __ERROR_H__

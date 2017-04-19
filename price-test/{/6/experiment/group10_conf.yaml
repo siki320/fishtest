@@ -1,0 +1,26 @@
+# 绝对值门槛
+absolute:
+    transform_rate: 0.3
+    order_value: 20
+
+    # 兜底折扣(当绝对值门槛不满足时生效@甄鹏)
+    pre_total_fee: 20   # 价格门槛下限
+    discount: 0.6
+
+# 相对值门槛
+relative:
+    transform_rate_avg: 0.5
+    transform_rate_delta: 0.2
+
+    order_value_avg: 10
+    order_value_delta: 0.6
+
+# 门槛生效开关：0-无门槛，1-绝对值门槛，2-相对值门槛
+enable: 1
+
+# (order_value_avg/order_value+beta)^expo
+beta: -0.404588
+expo: 0.190345
+
+# 折扣区间
+discount: [0.98, 0.99]

@@ -1,0 +1,25 @@
+[INFO     04-19 17:38:57] [] [framemain.py:28:execute] Start DTS
+[DEBUG    04-19 17:38:57] [] [normal_suite.py:62:_run_cases] Use Plugin : <class 'mytest.control.plugin.mycase.MyCase_Plugin'>
+[INFO     04-19 17:38:57] [] [mycase.py:54:startup_env] [Plugin] startup env ...
+[INFO     04-19 17:38:57] [] [mycase.py:64:common_check] [Plugin] Common check ...
+[INFO     04-19 17:38:57] [] [normal_case.py:45:log_start_line] 
+[INFO     04-19 17:38:57] [] [normal_case.py:46:log_start_line] ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+[INFO     04-19 17:38:57] [] [normal_case.py:47:log_start_line] ++++++++    Start Case : dups-price/Pricetest.py    ++++++++
+[INFO     04-19 17:38:57] [] [normal_case.py:48:log_start_line] ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+[INFO     04-19 17:38:57] [] [Pricetest.py:35:test_stg] **********Test Case: Test passenger_id=[7447607]**********
+[INFO     04-19 17:38:57] [] [PriceClient.py:117:PriceResReal] ===============================Thrift PriceRes: dp: PriceReq(pre_total_fee=40, flat=32.087982, stg_name='sid', tlat=32.05034, product_id=3, trace=Trace(srcMethod=None, hintContent=None, traceId='0x1234beef', hintCode=None, caller='dups-api', spanId='10000'), area=6, road_distance=10803, passenger_phone='13100000000', user_type=1, app_channel=None, ctime=1480562059, bubble_id='dpkey_a6e466d2309560f0219f433a9cd54793_3_5_0_13588311326_116001790_20172301912347', eta=40, req_type=3, tlng=118.7794, app_version='5.0.12', passengerid=7447607, flng=118.800575) ==============================
+[INFO     04-19 17:38:57] [] [PriceClient.py:148:print_ip_port] [DP Trift/HTTP] IP: '127.0.0.1', Port: 9000
+[INFO     04-19 17:38:57] [] [mycase.py:64:common_check] [Plugin] Common check ...
+[SUCCESS  04-19 17:38:57] [] [normal_suite.py:226:_run_one_case] Test Succeeded: dups-price/Pricetest.py.test_stg
+[INFO     04-19 17:38:57] [] [normal_case.py:54:log_end_line] ----------------------------------------------------------
+[INFO     04-19 17:38:57] [] [normal_case.py:55:log_end_line] --------    End Case : dups-price/Pricetest.py    --------
+[INFO     04-19 17:38:57] [] [normal_case.py:56:log_end_line] ----------------------------------------------------------
+[INFO     04-19 17:38:57] [] [normal_case.py:57:log_end_line] 
+[INFO     04-19 17:38:57] [] [mycase.py:58:stop_env] [Plugin] stop_env ...
+[INFO     04-19 17:38:57] [] [report.py:64:log_case_summary] Case Result:
+  - Case_Name	Result	Detail	Failed_Tests	Time(ms)
+  - /home/xiaoju/ENV/dups-price/price-test/mytest/dups-price/Pricetest.py	P			13
+  - CaseSum	P	Fail/All=0/1		47(ms)
+  - TestSum		Fail/All=0/1		
+  - ==========	End__Case__Log	==========
+[SUCCESS  04-19 17:38:57] [] [framemain.py:52:execute] DTS return code 0

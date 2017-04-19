@@ -1,0 +1,12 @@
+# 冒泡转化率配置说明
+# model: 模型文件(相对路径)
+# index: 模型各特征对应的offset
+# table: 
+#   - index: 格子ID到格子Index映射字典
+#   - pair_index: 起终点对字典
+
+model: qingdao.model
+index: qingdao.index
+table:
+  index: ["start_qingdao.dict"]
+  pair_index: ["area_qingdao.dict"]

@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+        <meta http-equiv="Content-Language" content="zh-cn" />
+
+        <script language="JavaScript">
+        //optional: black or blue
+        color = "black";
+        
+        //optional: bgmap, module, log        
+        drawId = "module";
+
+        //Dom Consts
+        SHIFTX = 0;
+        SHIFTY = 60;
+        
+        //Line Border
+        LINEBORDER = 3;
+        </script>
+        <script language="JavaScript" src="js/draw.js">
+        </script>
+        <title>XTS Visual Plugin</title>
+    </head>
+
+    <body background="img/bgc1.png">
+	<div style="width:100%;size:36px;"><span><center><h4>XTS Visual Plugin</h4></center></span></div>
+
+	<!--back ground map-->	
+	<div id="bgmap"></div>
+	<!--modules-->	
+	<div id="module"></div>
+	<!-- infos -->	
+	<div id="log"></div>
+	<script language = "JavaScript">
+  
+            {% for module in modules %}
+            drawModule("img/module.png", "{{module.0}}", {{module.1}}, {{module.2}}, SHIFTX, SHIFTY);
+            {% endfor %}
+
+            {% for line in lines %}
+            drawLine({{line.0}}, {{line.1}}, {{line.2}}, {{line.3}});
+            {% endfor %}                  
+
+            {% for log in logs %}
+            drawLogIframe("{{log.0}}", {{log.1}},{{log.2}}, SHIFTX, SHIFTY, {{log.3}}, {{log.4}});
+            {% endfor %}
+
+
+            //You can do some thing here like this, guy!
+   
+            //drawModule("img/module.png", "UI", 500, 0, SHIFTX, SHIFTY);
+            //drawModule("img/module.png", "RS", 500, 180, SHIFTX, SHIFTY);
+            //drawModule("img/stub.png", "UFS-Stub1", 200, 180, SHIFTX, SHIFTY);
+            //drawModule("img/stub.png", "UFS-Stub2", 800, 360, SHIFTX, SHIFTY);
+            //drawModule("img/module.png", "index", 500, 540, SHIFTX, SHIFTY);
+            //drawLine(500,0,500,180);
+            //drawLine(200,180,500,180);
+            //drawLine(800,360,500,180);
+            //drawLine(800,360,500,540);
+            //drawLine(500,540,500,180);
+            //drawLogIframe("wf.htm#tail", 600, 400, SHIFTX, SHIFTY, 360, 200);
+            //drawLogIframe("wf.htm#tail", 200, 300, SHIFTX, SHIFTY, 360, 100);
+            
+        </script>
+    </body>
+</html>

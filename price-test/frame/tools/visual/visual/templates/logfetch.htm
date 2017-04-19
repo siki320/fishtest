@@ -1,0 +1,42 @@
+<html>
+    <head>
+    <script language="JavaScript">
+    allowRefresh = true;
+    function changeRefresh(){
+        allowRefresh = !allowRefresh;
+        document.getElementById("allowRefreshhead").checked = allowRefresh;
+        document.getElementById("allowRefreshtail").checked = allowRefresh;
+        
+    }
+    function openInNewWindow() {
+        //trick ways to disable auto refresh
+        allowRefresh = true;
+        changeRefresh();
+        window.open(window.location.href);
+    }
+    function selfRefresh(){
+        if(allowRefresh){
+            window.location.reload();
+        }
+        else{
+            setTimeout('selfRefresh()',8000);//do it after 3 sec
+        }
+    }
+    setTimeout('selfRefresh()',8000); //do it after 3 sec
+    </script>
+    <title>{{logpath}}</title>
+    </head>
+    <body bgcolor="#FFFFFF" style="font-size:9pt">
+    <input type="button" onclick="openInNewWindow()" value="Open in New Window" /><input type="checkbox" id="allowRefreshhead" value="Auto Refresh" onclick="changeRefresh()" checked="checked">Auto Refresh
+    <br />
+    <span id="head"></span>
+    <div>
+    {% for logline in loginfo %}
+    {{ logline }}<br />
+    {% endfor %}
+    </div>
+    <span id="tail"></span>
+    <br />
+    <input type="button" onclick="openInNewWindow()" value="Open in New Window" /><input type="checkbox" id="allowRefreshtail" value="Auto Refresh" onclick="changeRefresh()" checked="checked">Auto Refresh
+    </body></html>
+

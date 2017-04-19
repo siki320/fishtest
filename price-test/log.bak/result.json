@@ -1,0 +1,17 @@
+{
+  "failed": {
+    "count": 0
+  }, 
+  "skipped": {
+    "count": 0
+  }, 
+  "total": {
+    "count": 0
+  }, 
+  "succeed": {
+    "count": 0
+  }, 
+  "error": {
+    "count": 0
+  }
+}

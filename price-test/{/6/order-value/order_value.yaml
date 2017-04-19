@@ -1,0 +1,27 @@
+# 订单价值配置说明
+# model: 模型文件
+# index: 模型各特征对应的offset
+# table: 
+#   - index: 格子ID到格子Index映射字典
+#   - pair_index: 起终点对字典
+#   - pair_time_index: 起终点时间字典
+#   - index_to_next: 地理位置-接到下一单时间字典
+#   - index_to_meet: 地理位置-接驾距离、接驾时间字典
+
+model: train_201701-03.model.w
+index: file.index
+
+table:
+  index: ["zone_geo.dict"]
+  pair_index: ["zone_geo_pair.dict"]
+  pair_time_index: ["zone_geo_time_pair.dict"]
+  index_to_next: ["zone_interval.dict"]
+  index_to_meet: ["zone_pickup.dict"]
+
+weight:
+    beta: 0.64
+    t: 1.85
+    max_iph: 2.5
+    min_dis: 6100   # 最小距离
+    min_wgt: 1.0    # 最小权重
+    max_wgt: 2.5    # 最大权重

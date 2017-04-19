@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gbk" />
+	<title>test</title>
+	<style>
+	body { margin: 0; padding: 0 }
+	pre { margin: 0 }
+	</style>
+	<link rel="stylesheet" type="text/css" href="prettify.css" />
+	<script type="text/javascript" src="prettify.js"></script>
+	<script type="text/javascript">
+	PR['registerLangHandler'](
+	    PR['createSimpleLexer']([
+			[PR['PR_PLAIN'],       /^[\r\n\f]+/, null, '\r\n\f'],
+        ],[
+			['lang-mycode-com', /(^\ \ X.*)/],
+			['lang-mycode-kwd', /(^\ \ O.*)/],
+			['lang-mycode-str', /(^\-\-\>.*)/],
+        ]),
+    ['mycode']);
+	PR['registerLangHandler'](
+	    PR['createSimpleLexer']([
+
+		],[
+			['hid', /^\ \ X/],
+			[PR['PR_COMMENT'], /.*/],
+        ]),
+    ['mycode-com']);
+	PR['registerLangHandler'](
+	    PR['createSimpleLexer']([
+
+		],[
+			['hid', /^\ \ O/],
+			[PR['PR_KEYWORD'], /.*/],
+        ]),
+    ['mycode-kwd']);
+	PR['registerLangHandler'](
+	    PR['createSimpleLexer']([
+
+		],[
+			['hid', /^\-\-\>/],
+			[PR['PR_STRING'], /.*/, null],
+        ]),
+    ['mycode-str']);
+	</script>
+</head>
+
+<body onload="prettyPrint();">
+<pre class="prettyprint lang-mycode">
+
+../src/consume_data.cpp
+         55: 	{
+         56: 		FATAL_LOG("consume data init conf failed, parameter p_conf[%p] is NULL", p_conf);
+         57: 		return -1;
+         58: 	}
+         59: 	int conf_ret = 0;	
+  X      60: 	
+         61: 
+         62: 	const uint32_t DFT_USER_CONSUM_SIZE = 2000000; /**< 获取user consume size*/
+         63:     conf_ret = ub_conf_getuint(p_conf, "user_consum_size", &m_user_consume_size,
+         64: 								"user_consum词表create大小", &DFT_USER_CONSUM_SIZE);
+         65: 	if (conf_ret != UB_CONF_SUCCESS && conf_ret != UB_CONF_DEFAULT)
+
+../src/budget_tools.cpp
+         41: 		return -1;
+         42: 	}
+         43: 
+         44: 	FILE *fp = NULL;
+         45: 	char filename[BUDGET_PATH_SIZE];
+  X      46:     
+         47: 	int min_idx = INT_MAX;
+         48: 	int min_line = INT_MAX;
+         49: 	for(int i = 0; i < shard_num; i++)
+         50: 	{
+         51: 		snprintf(filename, sizeof(filename), "%s.%d", idx_file_prefix, i);
+
+../src/budget_sf_monitor.cpp
+        518:  * @date 2012/07/21 14:57:24
+        519: **/
+        520: int budget_am_handler_t::inc(char *p_req, char* p_resp, void *param)
+        521: {
+        522: 	common_proc_data_t *proc_data = get_common_proc_data();
+  X     523: 	
+        524: 	if(proc_data == NULL)
+        525: 	{
+        526: 		sf_active_monitor_t::resp_gen(p_resp, "Error", "Get proc_data error!");
+        527: 		return sf_active_monitor_t::RES_NOR_WITH_TXT;
+        528: 	}
+</pre>
+</body>
+</html>

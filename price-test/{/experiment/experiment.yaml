@@ -1,0 +1,28 @@
+# 实验配置说明
+# control: 流量划分方式
+#   - 0: pid取模
+#   - 1: bubble_id哈希取模
+#   - 2: 乘客词表
+# groups: 实验组列表
+#   group: 实验名
+#   dict: 人群词表(仅control=2生效)
+#   percent: 流量百分比(0-100),所有实验总和等于100(仅control=0/1生效)
+#   type: 实验类型
+#     - 0: 单因素(目的地)
+#     - 1: 单因素(里程) 
+#     - 2: 多因素
+#   schema: 实验影响因素(仅单因素实验生效)
+#     - DEST: 目的地
+#     - DEST_DIST: 目的地-里程
+#     - DEST_HOUR: 目的地-时段
+#     - DEST_DIST_HOUR: 目的地-里程-时段
+#     - DIST: 里程
+#     - DIST_HOUR: 里程-时段
+#   conf_file: 实验配置文件
+
+control: 0
+groups:
+  - group: group10
+    percent: 100       
+    type: 2
+    conf_file: group10_conf.yaml

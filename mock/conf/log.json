@@ -1,0 +1,17 @@
+{
+    "LogLevel" : "trace",
+
+    "FileWriter" : {
+        "On": true,
+
+        "LogPath" : "./log/api-mock.log.info",
+        "RotateLogPath" : "./log/api-mock.log.info.%Y%M%D%H",
+
+        "WfLogPath" : "./log/api-mock.log.wf",
+        "RotateWfLogPath" : "./log/api-mock.log.wf.%Y%M%D%H"
+    },
+
+    "ConsoleWriter" : {
+        "On" : false
+    }
+}

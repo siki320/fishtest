@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gbk" />
+	<title>test</title>
+	<style>
+	body { margin: 0; padding: 0 }
+	pre { margin: 0 }
+	</style>
+	<link rel="stylesheet" type="text/css" href="prettify.css" />
+	<script type="text/javascript" src="prettify.js"></script>
+	<script type="text/javascript">
+	PR['registerLangHandler'](
+	    PR['createSimpleLexer']([
+			[PR['PR_PLAIN'],       /^[\r\n\f]+/, null, '\r\n\f'],
+        ],[
+			['lang-mycode-com', /(^\ \ X.*)/],
+			['lang-mycode-kwd', /(^\ \ O.*)/],
+			['lang-mycode-str', /(^\-\-\>.*)/],
+        ]),
+    ['mycode']);
+	PR['registerLangHandler'](
+	    PR['createSimpleLexer']([
+
+		],[
+			['hid', /^\ \ X/],
+			[PR['PR_COMMENT'], /.*/],
+        ]),
+    ['mycode-com']);
+	PR['registerLangHandler'](
+	    PR['createSimpleLexer']([
+
+		],[
+			['hid', /^\ \ O/],
+			[PR['PR_KEYWORD'], /.*/],
+        ]),
+    ['mycode-kwd']);
+	PR['registerLangHandler'](
+	    PR['createSimpleLexer']([
+
+		],[
+			['hid', /^\-\-\>/],
+			[PR['PR_STRING'], /.*/, null],
+        ]),
+    ['mycode-str']);
+	</script>
+</head>
+
+<body onload="prettyPrint();">
+<pre class="prettyprint lang-mycode">
+
+</pre>
+</body>
+</html>
